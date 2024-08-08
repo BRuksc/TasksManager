@@ -61,5 +61,6 @@
   <ItemGroup>
     <Build Include="Tables\Workers.sql" />
     <Build Include="Tables\Managers.sql" />
+    <Build Include="Tables\Tasks.sql" />
   </ItemGroup>
 </Project>
