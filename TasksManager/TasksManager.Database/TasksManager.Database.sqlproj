@@ -58,30 +58,42 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Procedures" />
+    <Folder Include="Scripts" />
+    <Folder Include="Triggers" />
+    <Folder Include="FK" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Workers.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Build>
-    <Build Include="Tables\Managers.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Build>
-    <Build Include="Tables\Tasks.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Build>
     <Build Include="Procedures\EditTask.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
     <Build Include="Procedures\AddTask.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
-    <Build Include="Tables\TasksHistory.sql">
+    <Build Include="Triggers\TaskChanged.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
+    <Build Include="Tables\Managers.sql" />
+    <Build Include="Tables\Workers.sql" />
+    <Build Include="Tables\Tasks.sql" />
+    <Build Include="Tables\TasksHistory.sql" />
+    <Build Include="FK\Workers_FK_ManagerId.sql" />
+    <Build Include="FK\TasksHistory_FK_TaskId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Build Include="Scripts\CreateDb.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <None Include="Scripts\UseMaster.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\DatabaseInitialization.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="FK\Tasks_FK_Owner.sql" />
   </ItemGroup>
 </Project>
