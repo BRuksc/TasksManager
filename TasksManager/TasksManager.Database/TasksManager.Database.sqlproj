@@ -58,7 +58,6 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Procedures" />
-    <Folder Include="Scripts" />
     <Folder Include="Triggers" />
     <Folder Include="FK" />
   </ItemGroup>
@@ -81,15 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Build Include="Scripts\CreateDb.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Build>
-    <None Include="Scripts\UseMaster.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\DatabaseInitialization.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
