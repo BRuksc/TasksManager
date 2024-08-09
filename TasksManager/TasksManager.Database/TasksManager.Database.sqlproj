@@ -57,10 +57,16 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Workers.sql" />
     <Build Include="Tables\Managers.sql" />
     <Build Include="Tables\Tasks.sql" />
+    <Build Include="Procedures\EditTask.sql" />
+    <Build Include="Procedures\AddTask.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Procedures\DeleteTask.sql" />
   </ItemGroup>
 </Project>

@@ -4,6 +4,10 @@
 	[TaskId] INT UNIQUE IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[Name] NVARCHAR(200) NOT NULL,
 	[Description] NVARCHAR(MAX) NULL,
-	[Owner] UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Workers(Id) NULL,
+	[Owner] UNIQUEIDENTIFIER 
+		FOREIGN KEY REFERENCES Workers(Id) NULL,
+	[Shared] BIT NOT NULL,
+	[Priority] INT NOT NULL 
+		CONSTRAINT [PriorityScale] CHECK ([Priority] <= 3 AND [Priority] >= 1),
 	[StoryPointsEstimation] INT NULL
 )
