@@ -1,0 +1,18 @@
+﻿CREATE PROCEDURE dbo.DeleteTask
+	@Id UNIQUEIDENTIFIER NULL,
+	@TaskId INT NULL
+AS
+	BEGIN TRY
+
+		IF @Id IS NULL AND @TaskId IS NULL
+			THROW 1, 'All of procedure parameters are null', 40;
+
+		ELSE IF @Id IS NOT NULL DELETE FROM dbo.Tasks WHERE Id = @Id
+
+		ELSE DELETE FROM dbo.Tasks WHERE TaskId = @TaskId;
+
+	END TRY
+	BEGIN CATCH
+		THROW;
+	END CATCH
+RETURN 0;

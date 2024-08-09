@@ -60,14 +60,28 @@
     <Folder Include="Procedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Workers.sql" />
-    <Build Include="Tables\Managers.sql" />
-    <Build Include="Tables\Tasks.sql" />
-    <Build Include="Procedures\EditTask.sql" />
-    <Build Include="Procedures\AddTask.sql" />
-    <Build Include="Tables\TasksHistory.sql" />
+    <Build Include="Tables\Workers.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Tables\Managers.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Tables\Tasks.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Procedures\EditTask.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Procedures\AddTask.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Tables\TasksHistory.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Procedures\DeleteTask.sql" />
+    <None Include="Procedures\DeleteTask.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
