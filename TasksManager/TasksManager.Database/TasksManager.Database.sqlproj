@@ -65,6 +65,7 @@
     <Build Include="Tables\Tasks.sql" />
     <Build Include="Procedures\EditTask.sql" />
     <Build Include="Procedures\AddTask.sql" />
+    <Build Include="Tables\TasksHistory.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql" />
