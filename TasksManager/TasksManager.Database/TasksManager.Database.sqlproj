@@ -78,6 +78,7 @@
     <Build Include="FK\Workers_FK_ManagerId.sql" />
     <Build Include="FK\TasksHistory_FK_TaskId.sql" />
     <Build Include="Functions\MonthStatisticsPerWorker.sql" />
+    <Build Include="Triggers\ManagerIdVerification.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
