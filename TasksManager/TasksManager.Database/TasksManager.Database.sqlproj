@@ -60,6 +60,7 @@
     <Folder Include="Procedures" />
     <Folder Include="Triggers" />
     <Folder Include="FK" />
+    <Folder Include="Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Procedures\EditTask.sql">
@@ -77,6 +78,7 @@
     <Build Include="Tables\TasksHistory.sql" />
     <Build Include="FK\Workers_FK_ManagerId.sql" />
     <Build Include="FK\TasksHistory_FK_TaskId.sql" />
+    <Build Include="Functions\MonthStatisticsPerWorker.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
