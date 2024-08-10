@@ -12,6 +12,8 @@ namespace TasksManagerCmd
     {
         public static int RunDbInitialization(DbInitializationOptions options)
         {
+            Console.WriteLine("Test");
+
             return 0;
         }
     }

@@ -8,6 +8,7 @@ namespace TasksManagerCmd.Interfaces
 {
     public interface IBaseOptionsProps
     {
+        public bool Help { get; set; }
         public string ServerName { get; set; }
         public string IsIntegrated { get; set; }
         public string AdminLogin { get; set; }
