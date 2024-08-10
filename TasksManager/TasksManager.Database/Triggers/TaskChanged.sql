@@ -39,7 +39,7 @@
 			IF EXISTS (SELECT * FROM deleted) AND EXISTS (SELECT * FROM inserted)
 			BEGIN
 				INSERT INTO [dbo].[TasksHistory] 
-					([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DataOfChange])
+					([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DateOfChange])
 					SELECT
 						i.TaskId,
 						@columnValue,
@@ -55,7 +55,7 @@
 
 			  ELSE IF EXISTS (SELECT * FROM deleted)
 			  BEGIN
-				INSERT INTO [dbo].[TasksHistory] ([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DataOfChange])
+				INSERT INTO [dbo].[TasksHistory] ([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DateOfChange])
 					SELECT
 						d.TaskId,
 						@columnValue,
@@ -69,7 +69,7 @@
 
 			  ELSE
 			  BEGIN
-				INSERT INTO [dbo].[TasksHistory] ([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DataOfChange])
+				INSERT INTO [dbo].[TasksHistory] ([TaskId], [Column], [OperationType], [NewValue], [OldValue], [DateOfChange])
 					SELECT
 						i.TaskId,
 						@columnValue,

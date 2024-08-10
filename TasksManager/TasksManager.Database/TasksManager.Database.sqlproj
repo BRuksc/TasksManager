@@ -72,8 +72,7 @@
     <Build Include="Triggers\TaskChanged.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
-    <Build Include="Tables\Managers.sql" />
-    <Build Include="Tables\Workers.sql" />
+    <Build Include="Tables\Users.sql" />
     <Build Include="Tables\Tasks.sql" />
     <Build Include="Tables\TasksHistory.sql" />
     <Build Include="FK\Workers_FK_ManagerId.sql" />
