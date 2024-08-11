@@ -61,6 +61,7 @@
     <Folder Include="Triggers" />
     <Folder Include="FK" />
     <Folder Include="Functions" />
+    <Folder Include="Constraints" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Procedures\EditTask.sql">
@@ -72,9 +73,15 @@
     <Build Include="Triggers\TaskChanged.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
-    <Build Include="Tables\Users.sql" />
-    <Build Include="Tables\Tasks.sql" />
-    <Build Include="Tables\TasksHistory.sql" />
+    <Build Include="Tables\Users.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Tables\Tasks.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
+    <Build Include="Tables\TasksHistory.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
     <Build Include="FK\Workers_FK_ManagerId.sql" />
     <Build Include="FK\TasksHistory_FK_TaskId.sql" />
     <Build Include="Functions\MonthStatisticsPerWorker.sql" />
@@ -84,6 +91,11 @@
     <None Include="Procedures\DeleteTask.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Constraints\Tasks_CHK_Priority.sql" />
+    <None Include="Constraints\TasksHistory_CHK_OperationType.sql" />
+    <None Include="Constraints\TasksHistory_CHK_Column.sql" />
+    <None Include="Constraints\Users_CHK_Position.sql" />
+    <None Include="Constraints\Users_CHK_ManagerId.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="FK\Tasks_FK_Owner.sql" />

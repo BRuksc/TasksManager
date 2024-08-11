@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TasksManagerCmd.DbTools;
 using TasksManagerCmd.Interfaces;
 using TasksManagerCmd.Options;
 
 namespace TasksManagerCmd
 {
-    public static class CommandsExecutor
+    public class CommandsExecutor : ICommandsExecute
     {
-        public static int RunDbInitialization(DbInitializationOptions options)
+        private IConnectionStringBuild _connectionStringBuilder;
+
+        public int RunDbInitialization(DbInitializationOptions options)
         {
-            Console.WriteLine("Test");
+            _connectionStringBuilder = 
+                new ConnectionStringBuilder<DbInitializationOptions>(options);
+
+            IDbManage dbManager = new DbManager(_connectionStringBuilder);
+
+            dbManager.Initialize(options.DbName);
 
             return 0;
         }

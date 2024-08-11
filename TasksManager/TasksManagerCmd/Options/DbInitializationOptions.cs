@@ -9,9 +9,8 @@ using TasksManagerCmd.Interfaces;
 namespace TasksManagerCmd.Options
 {
     [Verb("DbInitialization", isDefault: true, null, HelpText = "Verb for initialization database command")]
-    public class DbInitializationOptions : BaseOptions, IDbInitializeProps
+    public class DbInitializationOptions : BaseOptions
     {
-        [Option('d', "DbName", Required = true)]
-        public string DbName { get; set; }
+
     }
 }

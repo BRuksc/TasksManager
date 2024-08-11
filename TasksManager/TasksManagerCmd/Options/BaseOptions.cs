@@ -10,8 +10,8 @@ namespace TasksManagerCmd.Options
 {
     public abstract class BaseOptions : IBaseOptionsProps
     {
-        [Option('h', "help", HelpText = "Display this help screen.")]
-        public bool Help { get; set; }
+        [Option('d', "DbName", Required = true)]
+        public string DbName { get; set; }
 
         [Option('i', "IsIntegrated", Required = true)]
         public string IsIntegrated { get; set; }

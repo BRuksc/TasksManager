@@ -6,7 +6,6 @@
     [Description] NVARCHAR(MAX) NULL,
     [Owner] UNIQUEIDENTIFIER NOT NULL,
     [Shared] BIT NOT NULL,
-    [Priority] INT NOT NULL 
-        CONSTRAINT CHK_Priority CHECK ([Priority] >= 1 AND [Priority] <= 3),
+    [Priority] INT NOT NULL,
     [StoryPointsEstimation] INT NULL
 );

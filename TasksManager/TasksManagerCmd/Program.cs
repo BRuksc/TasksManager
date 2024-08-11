@@ -7,12 +7,28 @@ namespace TaskManagerCmd
 {
     public class Program
     {
-        public static int Main(string[] args) =>
-                Parser.Default.ParseArguments<DbInitializationOptions>(args)
-               .MapResult(
+        public static int Main(string[] args)
+        {
+            string[] testArr = new string[]
+            {
+                "DbInitialization",
+                "-itrue",
+                "-ladmin",
+                "-pQwerty123",
+                "-nKINGA",
+                "-dtest"
+            };
+
+            ICommandsExecute commandsExecutor = new CommandsExecutor();
+
+            return
+                Parser.Default.ParseArguments<DbInitializationOptions>(testArr)
+                .MapResult(
                        (DbInitializationOptions options) =>
-                           CommandsExecutor.RunDbInitialization(options),
+                           commandsExecutor.RunDbInitialization(options),
                        errors => 1
                 );
+        }
+
     }
 }
