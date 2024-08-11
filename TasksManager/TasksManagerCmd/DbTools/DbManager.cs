@@ -24,29 +24,9 @@ namespace TasksManagerCmd.DbTools
 
             _sqlExecutor = new SqlExecutor(_connectionStringBuilder.ConnectionStringWithDbName());
 
-            string projectCmdRoot = AppDomain.CurrentDomain.BaseDirectory;
-            string projectDbPath = String.Empty;
-
-#if DEBUG 
-            projectDbPath = Path.GetFullPath(Path.Combine(projectCmdRoot, @"..\..\..\..\TasksManager.Database\bin\Debug\Tables"));
-
-#else
-            projectDbPath = Path.GetFullPath(Path.Combine(projectCmdRoot, @"..\..\..\..\TasksManager.Database\bin\Release\Tables"));
-#endif
-
-            ExecuteAllScriptsInDirectory(projectDbPath);
-        }
-
-        private void ExecuteAllScriptsInDirectory(string directoryPath)
-        {
-            if (Directory.Exists(directoryPath))
+            foreach (var type in DbObjects.Types)
             {
-                string[] fileNames = Directory.GetFiles(directoryPath);
-
-                foreach (var fileName in fileNames)
-                {
-                    _sqlExecutor.ExecuteScript(fileName);
-                }
+                _sqlExecutor.ExecuteAllScriptsInDirectory(type);
             }
         }
     }

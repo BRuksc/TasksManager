@@ -68,5 +68,28 @@ namespace TasksManagerCmd.DbTools
                 }
             }
         }
+
+        public void ExecuteAllScriptsInDirectory(string directory)
+        {
+            string projectCmdRoot = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDbPath = String.Empty;
+
+#if DEBUG 
+            projectDbPath = Path.GetFullPath(Path.Combine(projectCmdRoot, @"..\..\..\..\TasksManager.Database\bin\Debug\" + directory));
+
+#else
+            projectDbPath = Path.GetFullPath(Path.Combine(projectCmdRoot, @"..\..\..\..\TasksManager.Database\bin\Release\" + directory));
+#endif
+
+            if (Directory.Exists(projectDbPath))
+            {
+                string[] fileNames = Directory.GetFiles(projectDbPath);
+
+                foreach (var fileName in fileNames)
+                {
+                    ExecuteScript(fileName);
+                }
+            }
+        }
     }
 }

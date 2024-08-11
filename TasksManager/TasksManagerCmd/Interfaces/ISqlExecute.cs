@@ -10,5 +10,6 @@ namespace TasksManagerCmd.Interfaces
     {
         public void ExecuteScript(string path);
         public void ExecuteCommand(string cmd);
+        public void ExecuteAllScriptsInDirectory(string directory);
     }
 }
