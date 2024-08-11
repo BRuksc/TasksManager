@@ -11,12 +11,27 @@ namespace TaskManagerCmd
         {
             ICommandsExecute commandsExecutor = new CommandsExecutor();
 
-            return Parser.Default.ParseArguments<DbInitializationOptions, DbExecProcedureOptions>(args)
-                .MapResult(
-                    (DbInitializationOptions options) => commandsExecutor.RunDbInitialization(options),
-                    (DbExecProcedureOptions options) => commandsExecutor.RunExecProcedure(options),
-                    errors => 1
-                );
+            if (args.Contains(CommandsNames.DbInitialization))
+            {
+                return Parser.Default.ParseArguments<DbInitializationOptions>(args)
+                    .MapResult(
+                        options => commandsExecutor.RunDbInitialization(options),
+                        errors => 1
+                    );
+            }
+            else if (args.Contains(CommandsNames.DbExec))
+            {
+                return Parser.Default.ParseArguments<DbExecProcedureOptions>(args)
+                    .MapResult(
+                        options => commandsExecutor.RunExecProcedure(options),
+                        errors => 1
+                    );
+            }
+            else
+            {
+                Console.WriteLine("Unknown command.");
+                return 1;
+            }
         }
 
     }

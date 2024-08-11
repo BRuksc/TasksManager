@@ -8,7 +8,7 @@ using TasksManagerCmd.Interfaces;
 
 namespace TasksManagerCmd.Options
 {
-    [Verb("DbInitialization", isDefault: true, null, HelpText = "Verb for initialization database command")]
+    [Verb(CommandsNames.DbInitialization, isDefault: true, null, HelpText = "Verb for initialization database command")]
     public class DbInitializationOptions : BaseOptions
     {
 

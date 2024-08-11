@@ -18,8 +18,11 @@ namespace TasksManagerCmd.DbTools
             _sqlExecutor = new SqlExecutor(connectionStringBuilder.ConnectionStringWithMaster());
         }
 
-        public void ExecProcedure(string procName, string parameters) =>
+        public void ExecProcedure(string procName, string parameters)
+        {
+            _sqlExecutor = new SqlExecutor(_connectionStringBuilder.ConnectionStringWithDbName());
             _sqlExecutor.ExecuteCommand("EXEC dbo." + procName + " " + parameters);
+        }
 
         public void Initialize(string dbName)
         {

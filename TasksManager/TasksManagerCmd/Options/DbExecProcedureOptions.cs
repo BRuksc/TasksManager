@@ -8,13 +8,13 @@ using TasksManagerCmd.Interfaces;
 
 namespace TasksManagerCmd.Options
 {
-    [Verb("DbExec", isDefault: true, null, HelpText = "Verb for executing procedure command")]
+    [Verb(CommandsNames.DbExec, isDefault: true, null, HelpText = "Verb for executing procedure command")]
     public class DbExecProcedureOptions : BaseOptions, IDbExecProcedureProps
     {
         [Option('c', "ProcName", Required = true)]
         public string ProcName { get; set; }
 
-        [Option('a', "ProcParams", Required = true)]
+        [Option('a', "ProcParams", Required = false)]
         public string ProcParameters { get; set; }
     }
 }
