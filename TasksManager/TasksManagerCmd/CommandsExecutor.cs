@@ -25,5 +25,17 @@ namespace TasksManagerCmd
 
             return 0;
         }
+
+        public int RunExecProcedure(DbExecProcedureOptions options)
+        {
+            _connectionStringBuilder =
+                new ConnectionStringBuilder<DbExecProcedureOptions>(options);
+
+            IDbManage dbManager = new DbManager(_connectionStringBuilder);
+
+            dbManager.ExecProcedure(options.ProcName, options.ProcParameters);
+
+            return 0;
+        }
     }
 }

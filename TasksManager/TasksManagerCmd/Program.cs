@@ -9,24 +9,13 @@ namespace TaskManagerCmd
     {
         public static int Main(string[] args)
         {
-            string[] testArr = new string[]
-            {
-                "DbInitialization",
-                "-itrue",
-                "-ladmin",
-                "-pQwerty123",
-                "-nKINGA",
-                "-dtest"
-            };
-
             ICommandsExecute commandsExecutor = new CommandsExecutor();
 
-            return
-                Parser.Default.ParseArguments<DbInitializationOptions>(testArr)
+            return Parser.Default.ParseArguments<DbInitializationOptions, DbExecProcedureOptions>(args)
                 .MapResult(
-                       (DbInitializationOptions options) =>
-                           commandsExecutor.RunDbInitialization(options),
-                       errors => 1
+                    (DbInitializationOptions options) => commandsExecutor.RunDbInitialization(options),
+                    (DbExecProcedureOptions options) => commandsExecutor.RunExecProcedure(options),
+                    errors => 1
                 );
         }
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TasksManagerCmd.Interfaces
 {
-    public interface IDbManage
+    public interface IDbExecProcedureProps : IBaseOptionsProps
     {
-        public void Initialize(string dbName);
-        public void ExecProcedure(string procName, string parameters);
+        public string ProcName { get; set; }
+        public string ProcParameters { get; set; }
     }
 }

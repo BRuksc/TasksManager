@@ -10,5 +10,6 @@ namespace TasksManagerCmd.Interfaces
     public interface ICommandsExecute
     {
         public int RunDbInitialization(DbInitializationOptions options);
+        public int RunExecProcedure(DbExecProcedureOptions options);
     }
 }
