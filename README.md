@@ -13,8 +13,9 @@ aktywuje się trigger, który wstrzykuje automatycznie rekord przechowujący inf
 
 ## Jak używać TasksManagerCmd
 
-  Aplikacja konsolowa używa biblioteki CommandLineParser do automatycznego parsowania argumentów, aby można było wywołać komendę za pomocą   
-jednej linijki w konsoli. Parametry są potrzebne do prawidłowego połączenia z serwerem i szczegółowego określenia zamiarów użytkownika.  
+  Aplikacja konsolowa używa biblioteki CommandLineParser do automatycznego parsowania argumentów, 
+aby można było wywołać komendę za pomocą   jednej linijki w konsoli. Parametry są potrzebne do 
+prawidłowego połączenia z serwerem i szczegółowego określenia zamiarów użytkownika.  
 Aplikację odpalamy przez windowsowy wiersz polecenia.  
 
 Lista komend:  
