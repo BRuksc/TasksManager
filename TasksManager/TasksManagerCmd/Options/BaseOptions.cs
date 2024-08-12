@@ -16,10 +16,10 @@ namespace TasksManagerCmd.Options
         [Option('i', "IsIntegrated", Required = true)]
         public string IsIntegrated { get; set; }
 
-        [Option('l', "AdminLogin", Required = true)]
+        [Option('l', "AdminLogin", Required = false)]
         public string AdminLogin { get; set; }
 
-        [Option('p', "AdminPwd", Required = true)]
+        [Option('p', "AdminPwd", Required = false)]
         public string AdminPwd { get; set; }
 
         [Option('n', "ServerName", Required = true)]
