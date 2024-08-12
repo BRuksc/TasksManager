@@ -86,6 +86,8 @@
     <Build Include="FK\TasksHistory_FK_TaskId.sql" />
     <Build Include="Functions\MonthStatisticsPerWorker.sql" />
     <Build Include="Triggers\ManagerIdVerification.sql" />
+    <Build Include="Tables\Companies.sql" />
+    <Build Include="FK\Users_FK_CompanyId.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
@@ -96,6 +98,7 @@
     <None Include="Constraints\TasksHistory_CHK_Column.sql" />
     <None Include="Constraints\Users_CHK_Position.sql" />
     <None Include="Constraints\Users_CHK_ManagerId.sql" />
+    <None Include="Constraints\Companies_CHK_NipNumber.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="FK\Tasks_FK_Owner.sql" />
