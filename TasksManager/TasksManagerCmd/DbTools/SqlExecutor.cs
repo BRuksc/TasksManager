@@ -25,6 +25,7 @@ namespace TasksManagerCmd.DbTools
 
                     using (SqlCommand command = new SqlCommand(cmd, connection))
                     {
+                        command.CommandTimeout = 500;
                         command.ExecuteNonQuery();
                     }
                 }

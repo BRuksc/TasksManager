@@ -82,12 +82,17 @@
     <Build Include="Tables\TasksHistory.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Build>
-    <Build Include="FK\Workers_FK_ManagerId.sql" />
     <Build Include="FK\TasksHistory_FK_TaskId.sql" />
     <Build Include="Functions\MonthStatisticsPerWorker.sql" />
     <Build Include="Triggers\ManagerIdVerification.sql" />
-    <Build Include="Tables\Companies.sql" />
+    <Build Include="Tables\Companies.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
     <Build Include="FK\Users_FK_CompanyId.sql" />
+    <Build Include="FK\Users_FK_ManagerId.sql" />
+    <Build Include="Procedures\InsertTestData.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="Procedures\DeleteTask.sql">
@@ -95,7 +100,6 @@
     </None>
     <None Include="Constraints\Tasks_CHK_Priority.sql" />
     <None Include="Constraints\TasksHistory_CHK_OperationType.sql" />
-    <None Include="Constraints\TasksHistory_CHK_Column.sql" />
     <None Include="Constraints\Users_CHK_Position.sql" />
     <None Include="Constraints\Users_CHK_ManagerId.sql" />
     <None Include="Constraints\Companies_CHK_NipNumber.sql" />
