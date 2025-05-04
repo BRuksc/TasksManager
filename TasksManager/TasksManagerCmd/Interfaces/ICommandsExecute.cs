@@ -11,5 +11,6 @@ namespace TasksManagerCmd.Interfaces
     {
         public int RunDbInitialization(DbInitializationOptions options);
         public int RunExecProcedure(DbExecProcedureOptions options);
+        public int RunAddDbDirectory(AddDbDirectory options);
     }
 }

@@ -10,5 +10,6 @@ namespace TasksManagerCmd
     {
         public const string DbExec = "DbExec";
         public const string DbInitialization = "DbInitialization";
+        public const string AddDbDirectory = "AddDbDirectory";
     }
 }
